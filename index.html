@@ -10,15 +10,31 @@
 </head>
 <body>
 
-<div class="contain my-5 mx-auto">
+<div class="container my-5 mx-auto">
 
     <h1 class="text-muted text-center my-4">cliWeather</h1>
 
     <form class="change-location my-4 text-center text-muted">
-        <label for="city">Enter Location for weatheri information</label>
+        <!--'for' in the lable tag is associated withe 'name' in input tag-->
+        <label for="city">Enter Location for weather information</label>
         <input type="text" name="city" class="form-control p-4">
-
     </form>
+
+        <div class="card shadow-lg rounded"></div>
+        <img src="https://via.placeholder.com/400X300" class="time card-img-top">
+        <div class="icon bg-light mx-auto  text-center">
+            <!--icon-->
+        </div>
+
+        <div class="text-center text-uppercase text-muted detail">
+            <div class="my-3">City Name</div>
+            <div class="my-3">Weather</div>
+            <div class="display-4 my-3">
+                <span>temp</span>
+                <span>&deg;C</span>
+            </div>
+        </div>
+
 
 </div>
 

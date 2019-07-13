@@ -1,0 +1,9 @@
+body{
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    background: #eeedec;
+}
+
+.container{
+    max-width: 500px;
+}
