@@ -3,19 +3,19 @@ const key = "MqMeA7ZYWrWyHy1XFAAmltSe586cC9E6";
 
 //get weather information
 const getWeather = async (id)=>{
-    const base = 'http://dataservice.accuweather.com/locations/v1';
+    const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
 
-    const query = `${id}?apikey=${key}&q=${city}`;
+    const query = `${id}?apikey=${key}`;
     //No '?' for 'id' because its not a query parameter
 
-    const responds = await fetch(base + query); //So this fetches http://dataservice.accuweather.com/locations/v1/cities/search + ?apiKey=${key}&q=${city}`
+    const responds = await fetch(base + query); //So this fetches http://dataservice.accuweather.com/locations/v1/ + ${id}?apikey=${key}`
 
     //convert data to json
     const data = await responds.json();
 
 return data[0];
 
-}
+};
  
 
 //Async function to get city information
@@ -35,6 +35,8 @@ return data[0];
 };
 
 
-getCity('london')
-.then(data => console.log(data))
-.catch(err => console.log('error: Error Occurred'));
+
+// getCity('london')
+// .then(data => { return getWeather(data.Key)})
+// .then(key => console.log(key))
+// .catch(err => console.log('error: Error Occurred'));
