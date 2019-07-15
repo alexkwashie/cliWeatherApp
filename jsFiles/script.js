@@ -1,7 +1,9 @@
- 
+
  const input1 = document.querySelector('.change-location');
 
  const city_Name = document.querySelector('h5');
+
+    const card = document.querySelector('.card');
 
  const updateUI = (data) =>{
     const cityDetails1 = data.cityDetails;
@@ -11,15 +13,18 @@
     city_Name.innerHTML = `
     <h5 class="my-3 cityName">${cityDetails1.EnglishName}</h5>
             <h4 class="my-3">${weather1.WeatherText}</h4>
-            <div class="display-4 my-3">
+            <div class="display-4 my-4">
                 <span>${weather1.Temperature.Metric.Value}</span>
                 <p>&deg;C</p>
             </div>`;
+
+    card.classList.remove('d-none');
+            console.log(weather1.WeatherText)
  };
 
 
  const updateCity = async (city) =>{
- 
+
     //Use the await keyword because it return a promise and every promise might take time to oad data from api etc.
     const cityDetials = await getCity(city);
     const weather = await getWeather(cityDetials.Key);

@@ -1,9 +1,12 @@
 body{
     font-size: 0.8em;
     letter-spacing: 0.1em;
-    background: #eeedef;
+    background: #e1e1e1;
 }
 
 .container{
     max-width: 500px;
+    box-shadow: 0.5px 0.5px 02px 1px #888888;
+    border-radius: 5px;
+    padding-bottom:10px;
 }

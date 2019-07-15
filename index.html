@@ -16,27 +16,25 @@
 
     <form class="change-location my-4 text-center text-muted">
         <!--'for' in the lable tag is associated withe 'name' in input tag-->
-        <label for="city">Enter Location for weather information</label>
+        <label for="city">Enter city name  for weather information</label>
         <input type="text" name="city" class="form-control p-4">
     </form>
 
-        <div class="card shadow-lg rounded"></div>
+        <div class="card shadow-lg rounded d-none">
         <img src="https://via.placeholder.com/400X300" class="time card-img-top">
         <div class="icon bg-light mx-auto  text-center">
             <!--icon-->
         </div>
 
         <div class="text-center text-uppercase text-muted detail">
-            <h5 class="my-3 cityName">City Name</h5>
-            <h4 class="my-3">Weather</h4>
-            <div class="display-4 my-4">
-                <span>temp</span>
-                <p>&deg;C</p>
-            </div>
+        <h5 class="my-3 cityName">City Name</h5>
+        <h4 class="my-3">Weather</h4>
+
         </div>
 
+        </div>
+    </div>
 
-</div>
 
 
 <script src="jsFiles/data.js"></script>
