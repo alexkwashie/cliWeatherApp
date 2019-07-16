@@ -16,7 +16,7 @@ const getWeather = async (id)=>{
 return data[0];
 
 };
- 
+
 
 //Async function to get city information
 const getCity = async (city) =>{

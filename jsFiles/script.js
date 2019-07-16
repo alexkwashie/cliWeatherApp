@@ -5,6 +5,10 @@
 
     const card = document.querySelector('.card');
 
+    const time = document.querySelector('.time');
+    const icon = document.querySelector('.icon');
+
+//STEP-3
  const updateUI = (data) =>{
 
     const cityDetails1 = data.cityDetails;
@@ -24,10 +28,25 @@
                 card.classList.remove('d-none');
             };
 
-            console.log(cityDetails1, weather1);
+            //add icon and Imag here
+            let dayType = null;
+
+
+            if (weather1.IsDayTime){
+                dayType = 'img/dayy.gif';
+            }else{
+                dayType = 'img/nig.gif';
+            };
+
+            time.setAttribute('src', dayType);
+
+            let icon_img = weather1.WeatherIcon;
+
+            icon.innerHTML = `<img src="img/icons/${icon_img}.svg">`;
+
  };
 
-
+//STEP-2
  const updateCity = async (city) =>{
 
     //Use the await keyword because it return a promise and every promise might take time to oad data from api etc.
@@ -43,8 +62,7 @@
  };
 
 
-
-
+//STEP-1
  input1.addEventListener('submit', e => {
     e.preventDefault();
 
