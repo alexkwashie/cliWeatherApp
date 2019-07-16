@@ -1,25 +1,30 @@
 
  const input1 = document.querySelector('.change-location');
 
- const city_Name = document.querySelector('h5');
+ const city_Name = document.querySelector('.detail');
 
     const card = document.querySelector('.card');
 
  const updateUI = (data) =>{
+
     const cityDetails1 = data.cityDetails;
     const weather1 = data.weather;
 
     //update html template
     city_Name.innerHTML = `
-    <h5 class="my-3 cityName">${cityDetails1.EnglishName}</h5>
+    <h5 class="my-3 cityName">${cityDetails1.EnglishName}, ${cityDetails1.Country.EnglishName}</h5>
             <h4 class="my-3">${weather1.WeatherText}</h4>
             <div class="display-4 my-4">
                 <span>${weather1.Temperature.Metric.Value}</span>
-                <p>&deg;C</p>
+                <span>&deg;C</span>
             </div>`;
 
-    card.classList.remove('d-none');
-            console.log(weather1.WeatherText)
+                //remove d-none class
+            if(card.classList.contains('d-none')){
+                card.classList.remove('d-none');
+            };
+
+            console.log(cityDetails1, weather1);
  };
 
 
