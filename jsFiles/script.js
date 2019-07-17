@@ -11,6 +11,9 @@
 //STEP-3
  const updateUI = (data) =>{
 
+    if(!data){
+        console.log(data);
+    }else{
     const cityDetails1 = data.cityDetails;
     const weather1 = data.weather;
 
@@ -43,6 +46,7 @@
             let icon_img = weather1.WeatherIcon;
 
             icon.innerHTML = `<img src="img/icons/${icon_img}.svg">`;
+        };
 
  };
 
@@ -53,12 +57,11 @@
     const cityDetials = await getCity(city);
     const weather = await getWeather(cityDetials.Key);
 
-    //return multiples outputs as object
+       //return multiples outputs as object
     return {
         cityDetails : cityDetials,
         weather : weather
-    }
-
+        }
  };
 
 
@@ -66,14 +69,22 @@
  input1.addEventListener('submit', e => {
     e.preventDefault();
 
+
     //get city value
     let val = input1.city.value.trim();
-    input1.reset();
+
+    if(!val){
+        alert("Please enter a valid city name. Example 'london'.")
+    }else{
+        input1.reset();
+
+    }
+
 
     //update City name in UI
     updateCity(val)
     .then(data => updateUI(data))
-    .catch(err => updateUI((err)))
+    .catch(err => updateUI(err),alert("Please enter a valid city name. Example 'london'.")
 
 });
 
