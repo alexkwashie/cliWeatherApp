@@ -3,7 +3,7 @@ const key = "MqMeA7ZYWrWyHy1XFAAmltSe586cC9E6";
 
 //get weather information
 const getWeather = async (id)=>{
-    const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+    const base = 'https://dataservice.accuweather.com/currentconditions/v1/';
 
     const query = `${id}?apikey=${key}`;
     //No '?' for 'id' because its not a query parameter
@@ -20,7 +20,7 @@ return data[0];
 
 //Async function to get city information
 const getCity = async (city) =>{
-    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+    const base = 'https://dataservice.accuweather.com/locations/v1/cities/search';
 
     const query = `?apikey=${key}&q=${city}`;
     // '?' means adding Api query parameters, '&' means adding another query parameters

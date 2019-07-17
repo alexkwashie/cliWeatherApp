@@ -10,3 +10,11 @@ body{
     border-radius: 5px;
     padding-bottom:10px;
 }
+
+.icon{
+    position: relative;
+    top: -40px;
+    border-radius: 50%;
+    margin-bottom: -30px;
+    border: solid 3px rgb(131, 122, 81);
+}
