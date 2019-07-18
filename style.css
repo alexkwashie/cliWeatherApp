@@ -11,6 +11,14 @@ body{
     padding-bottom:10px;
 }
 
+.container .icon1{
+    width: 50px;
+    position: relative;
+    left: 45%;
+    bottom: -20px;
+
+}
+
 .icon{
     position: relative;
     top: -40px;
