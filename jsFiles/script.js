@@ -84,7 +84,18 @@
     //update City name in UI
     updateCity(val)
     .then(data => updateUI(data))
-    .catch(err => updateUI(err),alert("Please enter a valid city name. Example 'london'.")
+    .catch(err => updateUI(err))//,alert("Please enter a valid city name. Example 'london'."))
 
+    //Store recent city search into local storage
+    localStorage.setItem('city', val)
 });
+
+//So when ever the page loads it runs the stored city name
+if(localStorage.getItem('city')){
+    updateCity(localStorage.getItem('city'))
+    .then(data => updateUI(data))
+    .catch(err => updateUI(err))
+}
+
+
 
