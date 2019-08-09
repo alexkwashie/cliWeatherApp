@@ -8,6 +8,10 @@
     const time = document.querySelector('.time');
     const icon = document.querySelector('.icon');
 
+//A new instance for the Forcast object
+const forcast = new Forcast();
+
+
 //STEP-3
  const updateUI = (data) =>{
 
@@ -51,18 +55,6 @@
  };
 
 //STEP-2
- const updateCity = async (city) =>{
-
-    //Use the await keyword because it return a promise and every promise might take time to oad data from api etc.
-    const cityDetials = await getCity(city);
-    const weather = await getWeather(cityDetials.Key);
-
-       //return multiples outputs as object
-    return {
-        cityDetails : cityDetials,
-        weather : weather
-        }
- };
 
 
 //STEP-1
@@ -82,7 +74,7 @@
 
 
     //update City name in UI
-    updateCity(val)
+    forcast.updateCity(val)
     .then(data => updateUI(data))
     .catch(err => updateUI(err))//,alert("Please enter a valid city name. Example 'london'."))
 
@@ -92,10 +84,11 @@
 
 //So when ever the page loads it runs the stored city name
 if(localStorage.getItem('city')){
-    updateCity(localStorage.getItem('city'))
+    forcast.updateCity(localStorage.getItem('city'))
     .then(data => updateUI(data))
     .catch(err => updateUI(err))
 }
+
 
 
 
